@@ -25,6 +25,11 @@ app.use(express.json());
 app.use('/api/chat', chatRoutes);
 app.use('/api/appointments', appointmentRoutes);
 
+// Root Landing
+app.get("/", (req, res) => {
+    res.send("Chat Bot Backend is running 🚀");
+});
+
 // Health Check
 app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date() });
